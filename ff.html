@@ -1,107 +1,46 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Free Fire Reward Form</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Free Fire Reward</title>
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
     body {
       margin: 0;
-      padding: 0;
       font-family: Arial, sans-serif;
-      color: #fff;
       background-image: url('https://cdn.oneesports.gg/cdn-data/wp-content/uploads/2019/05/FreeFire.jpg');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      min-height: 100vh;
-      text-shadow: 1px 1px 4px black;
-    }
-
-    /* Navigation Menu */
-    .navbar {
+      height: 100vh;
+      color: white;
+      text-align: center;
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: rgba(0, 0, 0, 0.7);
-      padding: 10px 20px;
-    }
-
-    .navbar h2 {
-      margin: 0;
-      font-size: 18px;
-    }
-
-    .menu-icon {
-      font-size: 26px;
-      cursor: pointer;
-    }
-
-    .dropdown {
-      display: none;
       flex-direction: column;
-      background: rgba(0, 0, 0, 0.9);
-      position: absolute;
-      top: 50px;
-      right: 20px;
-      border-radius: 10px;
-      overflow: hidden;
+      justify-content: center;
+      align-items: center;
     }
-
-    .dropdown a {
-      padding: 12px 20px;
-      text-decoration: none;
-      color: #fff;
-      border-bottom: 1px solid #444;
-    }
-
-    .dropdown a:hover {
-      background: #333;
-    }
-
     .container {
-      background: rgba(0, 0, 0, 0.7);
-      margin: 100px auto 20px auto;
+      background: rgba(0, 0, 0, 0.6);
       padding: 30px;
       border-radius: 15px;
       width: 90%;
-      max-width: 360px;
-      text-align: center;
+      max-width: 400px;
     }
-
     h1 {
-      font-size: 22px;
-      margin-bottom: 10px;
-    }
-
-    p {
-      font-size: 15px;
-      margin-bottom: 10px;
-    }
-
-    label {
-      display: block;
-      font-size: 14px;
-      margin-bottom: 6px;
-      text-align: center;
-    }
-
-    input[type="email"] {
-      width: 100%;
-      max-width: 250px;
-      padding: 10px;
       margin-bottom: 15px;
-      border: none;
-      border-radius: 6px;
-      font-size: 15px;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
     }
-
+    label, p {
+      margin: 10px 0;
+    }
+    input[type="email"] {
+      width: 80%;
+      padding: 10px;
+      border-radius: 6px;
+      border: none;
+      margin-bottom: 20px;
+      font-size: 16px;
+    }
     button {
       background: #ff4444;
       color: white;
@@ -110,46 +49,45 @@
       font-size: 16px;
       border-radius: 6px;
       cursor: pointer;
-      transition: background 0.3s ease;
     }
-
     button:hover {
       background: #cc0000;
+    }
+    nav {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+    select {
+      padding: 8px;
+      font-size: 16px;
+      border-radius: 5px;
     }
   </style>
 </head>
 <body>
 
-  <!-- Navigation -->
-  <div class="navbar">
-    <h2>🔥 My Gaming Zone</h2>
-    <div class="menu-icon" onclick="toggleMenu()">☰</div>
-  </div>
+  <!-- Mobile menu -->
+  <nav>
+    <select onchange="location = this.value;">
+      <option disabled selected>Menu</option>
+      <option value="index.html">🏠 Home</option>
+      <option value="videos.html">🎮 My Videos</option>
+    </select>
+  </nav>
 
-  <!-- Dropdown Menu -->
-  <div class="dropdown" id="dropdownMenu">
-    <a href="https://www.youtube.com/@YourChannelName" target="_blank">🎮 YouTube Channel</a>
-    <a href="https://www.instagram.com/p/YourImageID/" target="_blank">📸 My Instagram Image</a>
-  </div>
-
-  <!-- Reward Form -->
+  <!-- Main content -->
   <div class="container">
-    <h1>🔥 Reward Claim 🔥</h1>
-    <p>Enter your email to claim your free reward in Free Fire</p>
-    <p>Join my team</p>
+    <h1>🔥 Free Fire Reward 🔥</h1>
+    <p>Enter your email to join my team & claim your reward</p>
 
     <form action="https://docs.google.com/forms/d/e/YOUR_FORM_ID/formResponse" method="POST" target="_blank">
-      <label for="email">Email ID</label>
+      <label for="email">Email ID</label><br>
       <input type="email" id="email" name="entry.1234567890" placeholder="Enter your email" required />
+      <br>
       <button type="submit">Submit</button>
     </form>
   </div>
 
-  <script>
-    function toggleMenu() {
-      const menu = document.getElementById('dropdownMenu');
-      menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
-    }
-  </script>
 </body>
 </html>
