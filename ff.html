@@ -17,15 +17,54 @@
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      min-height: 100vh;
       text-shadow: 1px 1px 4px black;
+    }
+
+    /* Navigation Menu */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 10px 20px;
+    }
+
+    .navbar h2 {
+      margin: 0;
+      font-size: 18px;
+    }
+
+    .menu-icon {
+      font-size: 26px;
+      cursor: pointer;
+    }
+
+    .dropdown {
+      display: none;
+      flex-direction: column;
+      background: rgba(0, 0, 0, 0.9);
+      position: absolute;
+      top: 50px;
+      right: 20px;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .dropdown a {
+      padding: 12px 20px;
+      text-decoration: none;
+      color: #fff;
+      border-bottom: 1px solid #444;
+    }
+
+    .dropdown a:hover {
+      background: #333;
     }
 
     .container {
       background: rgba(0, 0, 0, 0.7);
+      margin: 100px auto 20px auto;
       padding: 30px;
       border-radius: 15px;
       width: 90%;
@@ -80,6 +119,20 @@
   </style>
 </head>
 <body>
+
+  <!-- Navigation -->
+  <div class="navbar">
+    <h2>🔥 My Gaming Zone</h2>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+  </div>
+
+  <!-- Dropdown Menu -->
+  <div class="dropdown" id="dropdownMenu">
+    <a href="https://www.youtube.com/@YourChannelName" target="_blank">🎮 YouTube Channel</a>
+    <a href="https://www.instagram.com/p/YourImageID/" target="_blank">📸 My Instagram Image</a>
+  </div>
+
+  <!-- Reward Form -->
   <div class="container">
     <h1>🔥 Reward Claim 🔥</h1>
     <p>Enter your email to claim your free reward in Free Fire</p>
@@ -91,5 +144,12 @@
       <button type="submit">Submit</button>
     </form>
   </div>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('dropdownMenu');
+      menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
+    }
+  </script>
 </body>
 </html>
